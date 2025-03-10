@@ -22,6 +22,7 @@ const compareGuesses = (humanGuess, computerGuess, targetGuess) => {
     }
 };
 
+/*  This function checks who won the round and increases their score by 1 point */
 const updateScore = winner => {
     if (winner === 'human') {
         humanScore++
@@ -32,6 +33,8 @@ const updateScore = winner => {
     }
 };
 
+/* This function is used to update the round number after each round */
+const advanceRound = () => currentRoundNumber++;
 
 
 
