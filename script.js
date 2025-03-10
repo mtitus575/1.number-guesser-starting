@@ -36,5 +36,11 @@ const updateScore = winner => {
 /* This function is used to update the round number after each round */
 const advanceRound = () => currentRoundNumber++;
 
+//This function alerts the user to select a number between 0-9.
+const alert = () => {
+    if (humanGuess < 0 || humanGuess > 9) {
+        return 'Your number is out of range. Please select a number between 0 and 9.'
+    }
+}
 
 
