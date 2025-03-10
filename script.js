@@ -15,6 +15,11 @@ const compareGuesses = (humanGuess, computerGuess, targetGuess) => {
     const humanDifference = Math.abs(humanGuess - targetGuess);
     const computerDifference = Math.abs(computerGuess - targetGuess);
 
+    //This if statement validates the user input to be between 0 and 9.
+    if (humanGuess < 0 || humanGuess > 9) {
+        return 'Your number is out of range. Please select a number between 0 and 9.';
+    }
+
     if (humanDifference <= computerDifference) {
         return true;
     } else {
@@ -25,22 +30,14 @@ const compareGuesses = (humanGuess, computerGuess, targetGuess) => {
 /*  This function checks who won the round and increases their score by 1 point */
 const updateScore = winner => {
     if (winner === 'human') {
-        humanScore++
+        humanScore++;
     } else if (winner === 'computer') {
-        computerScore++
-    } else {
-        'An unexpected error occured'
-    }
+        computerScore++;
+    } 
 };
 
 /* This function is used to update the round number after each round */
+//This is a single line so I used Concise Body Arrow function syntax.
 const advanceRound = () => currentRoundNumber++;
-
-//This function alerts the user to select a number between 0-9.
-const alert = () => {
-    if (humanGuess < 0 || humanGuess > 9) {
-        return 'Your number is out of range. Please select a number between 0 and 9.'
-    }
-}
 
 
